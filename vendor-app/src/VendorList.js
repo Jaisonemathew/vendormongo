@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 function VendorList() {
     const [vendors, setVendors] = useState([]);
     useEffect(() => {
@@ -15,9 +15,11 @@ function VendorList() {
 
     return (
         <div>
+             <h1>Vendors</h1>
+                       <Link to="/add-vendor/">Add Vendors</Link>
             {vendors.map(vendor => (
-                <div key={vendor.VendorID}>
                 
+                <div key={vendor.VendorID}>
                     <h2>{vendor.Vendor_name}</h2>
                     <p>{vendor.VendorID}</p>
                     <p>{vendor.Account_no}</p>

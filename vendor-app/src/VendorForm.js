@@ -22,7 +22,7 @@ function VendorForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3000/api/Vendors/', vendor)
+        axios.post('http://localhost:3000/api/Vendors/Store/', vendor)
             .then(response => {
                 console.log(response);
                 setIsSubmitted(true);
@@ -35,6 +35,7 @@ function VendorForm() {
     return (
         <div>
             {isSubmitted && <p>Data added successfully!</p>}
+            <h1>Add Vendor</h1>
             <form onSubmit={handleSubmit}>
             <input type="text" name="Vendor_name" value={vendor.Vendor_name} onChange={handleChange} placeholder="Vendor Name" required />
             <input type="text" name="Account_no" value={vendor.Account_no} onChange={handleChange} placeholder="Account Number" required />
